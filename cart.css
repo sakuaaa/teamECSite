@@ -1,0 +1,29 @@
+﻿@CHARSET "UTF-8";
+
+/* -----------------------------------------------------------------------------*/
+/*  		カート																*/
+/* -----------------------------------------------------------------------------*/
+
+/* 押せないボタン */
+.submit_btn:disabled {
+	opacity: 0.4;
+    	color: black;
+	cursor: auto;
+	box-shadow: none;
+}
+
+/* ボタン横並び */
+.submit_btn_flex{
+	display: flex;
+ 	flex-direction: row;
+ 	justify-content: space-evenly;
+}
+
+/* cart.jspの合計金額表示位置 */
+.total_price {
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 50px;
+	color: #585858;
+	text-align: right;
+}
