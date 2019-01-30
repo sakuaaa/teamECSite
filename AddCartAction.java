@@ -61,9 +61,9 @@ public class AddCartAction extends ActionSupport implements SessionAware {
 //		仮ユーザーIDをtempUserIdに取得
 		tempUserId = String.valueOf(session.get("tempUserId"));
 
-		int productId = Integer.parseInt(session.get("productId").toString());						//商品ID
-		int productPrice = Integer.parseInt(session.get("productPrice").toString());				//金額
-		int productTotal = productPrice * intProductCount;											//金額 * 個数
+		int productId = Integer.parseInt(session.get("productId").toString());		//商品ID
+		int productPrice = Integer.parseInt(session.get("productPrice").toString());	//金額
+		int productTotal = productPrice * intProductCount;				//金額 * 個数
 
 //		追加前の総額と追加商品の合計金額がint型の最大値を超える場合は追加せずエラー
 		try {
