@@ -22,31 +22,31 @@ public class CartInfoDAO {
 
 //		カート情報と商品情報テーブルからデータ取得
 		String sql="select"
-		+ " ci.id as id,"									//カート：ID
-		+ " ci.user_id as user_id,"							//カート：ユーザーID
-		+ " ci.temp_user_id as temp_user_id,"				//カート：仮ユーザーID
-		+ " ci.product_id as product_id,"					//カート：商品ID
+		+ " ci.id as id,"					//カート：ID
+		+ " ci.user_id as user_id,"				//カート：ユーザーID
+		+ " ci.temp_user_id as temp_user_id,"			//カート：仮ユーザーID
+		+ " ci.product_id as product_id,"			//カート：商品ID
 		+ " sum(ci.product_count) as product_count,"		//商品IDごとにカートの購入個数をSUM
-		+ " pi.price as price,"								//商品情報：価格
-		+ " pi.regist_date as regist_date,"					//商品情報：登録日
-		+ " pi.update_date as update_date,"					//商品情報：更新日
-		+ " pi.product_name as product_name,"				//商品情報：商品名
+		+ " pi.price as price,"					//商品情報：価格
+		+ " pi.regist_date as regist_date,"			//商品情報：登録日
+		+ " pi.update_date as update_date,"			//商品情報：更新日
+		+ " pi.product_name as product_name,"			//商品情報：商品名
 		+ " pi.product_name_kana as product_name_kana,"		//商品情報：商品かな
 		+ " pi.product_description as product_description,"	//商品情報：商品詳細
-		+ " pi.category_id as category_id,"					//商品情報：カテゴリID
+		+ " pi.category_id as category_id,"			//商品情報：カテゴリID
 		+ " pi.image_file_path as image_file_path, "		//商品情報：画像ファイルパス
 		+ " pi.image_file_name as image_file_name, "		//商品情報：画像ファイル名
-		+ " pi.release_date as release_date,"				//商品情報：発売年月
-		+ " pi.release_company as release_company,"			//商品情報：発売会社
-		+ " pi.status as status,"							//商品情報：ステータス
-		+ " (sum(ci.product_count) * ci.price) as subtotal,"//カート：購入個数*金額
-		+ " max(ci.regist_date) as regist_date "			//更新日のMAX値を取得
-		+ " FROM cart_info as ci"							//カート情報TBL
-		+ " LEFT JOIN product_info as pi"					//商品情報TBL
-		+ " ON ci.product_id = pi.product_id"				//ID一致
-		+ " WHERE ci.user_id = ?"							//ユーザーID
-		+ " group by product_id"							//カートの商品IDでグループ化
-		+ " ORDER BY regist_date DESC";						//カート登録日の降順
+		+ " pi.release_date as release_date,"			//商品情報：発売年月
+		+ " pi.release_company as release_company,"		//商品情報：発売会社
+		+ " pi.status as status,"				//商品情報：ステータス
+		+ " (sum(ci.product_count) * ci.price) as subtotal,"	//カート：購入個数*金額
+		+ " max(ci.regist_date) as regist_date "		//更新日のMAX値を取得
+		+ " FROM cart_info as ci"				//カート情報TBL
+		+ " LEFT JOIN product_info as pi"			//商品情報TBL
+		+ " ON ci.product_id = pi.product_id"			//ID一致
+		+ " WHERE ci.user_id = ?"				//ユーザーID
+		+ " group by product_id"				//カートの商品IDでグループ化
+		+ " ORDER BY regist_date DESC";				//カート登録日の降順
 
 		try {
 
