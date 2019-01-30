@@ -4,25 +4,25 @@ import java.util.Date;
 
 public class CartInfoDTO {
 
-	private int id;					//ID
+	private int id;				//ID
 	private String userId;			//ユーザーID
 	private String tempUserId;		//仮ユーザーID
 	private int productId;			//商品ID
 	private int productCount;		//商品個数
-	private int price;				//価格
+	private int price;			//価格
 	private Date registDate;		//登録日
 	private Date updateDate;		//更新日
 
-	private String productName;			//商品名
+	private String productName;		//商品名
 	private String productNameKana;		//商品かな
 	private String productDescription;	//商品詳細
-	private int categoryId;				//カテゴリID
+	private int categoryId;			//カテゴリID
 	private String imageFilePath;		//画像ファイルパス
 	private String imageFileName;		//画像ファイル名
-	private Date releaseDate;			//発売年月
+	private Date releaseDate;		//発売年月
 	private String releaseCompany;		//発売会社
-	private String status;				//ステータス
-	private int subtotal;				//商品毎の購入個数*金額
+	private String status;			//ステータス
+	private int subtotal;			//商品毎の購入個数*金額
 
 	public int getId() {
 		return id;
